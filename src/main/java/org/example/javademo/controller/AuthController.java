@@ -99,6 +99,8 @@ public class AuthController {
             refreshCookie.setMaxAge(7 * 24 * 3600); // Ví dụ: 7 ngày
             httpResponse.addCookie(refreshCookie);
 
+            System.out.println("aceess token :" + accessToken);
+
             // Redirect về frontend
             return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(frontendUrl)).build();
         } catch (HttpClientErrorException e) {
